@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mareu</string>
+    <string name="meeting_room_name">nom des salles de réunion</string>
+    <string name="select_filter">Choix des filtres</string>
+    <string name="reset">Reset</string>
+    <string name="abort_add_meeting">abandon de l\'ajout d\'une reunion</string>
+    <string name="error_time_comparaison">l\'heure de fin ne peut pas précédé l\'heure du debut</string>
+    <string name="error_date_passed"> la date ne peut pas etre passée</string>
+    <string name="error_time_passed"> l\'heure ne peut pas etre passée</string>
+    <string name="error_add_new_meeting">champ invalide ou champ manquant</string>
+    <string name="add_new_meeting">La nouvelle réunion a été ajoutée</string>
+    <string name="error_meeting_already_create">La salle de réunion est déjà réservée</string>
+    <string name="error_empty_field">Ce champ ne peut pas être vide</string>
+    <string name="error_invalid_date_format">Format de la date invalide</string>
+    <string name="error_invalid_email">Format de l\'email invalide</string>
+    <string name="error_invalid_time_format">Format de l\'heure invalide</string>
+    <string name="meeting_topic">Sujet de la réunion</string>
+    <string name="list_of_participants">adresse des participants</string>
+    <string name="date">Date</string>
+    <string name="from">De</string>
+    <string name="to">à</string>
+    <string name="toast_text_delete_meeting">le meeting est supprimé!</string>
+
+</resources>

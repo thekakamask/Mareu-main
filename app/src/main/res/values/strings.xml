@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Mareu</string>
+    <string name="meeting_room_name">Meeting room name</string>
+    <string name="select_filter">Choices filter</string>
+    <string name="reset">Reset</string>
+    <string name="abort_add_meeting">Adding a meeting has been abort</string>
+    <string name="error_time_comparaison">End time cannot be earlier than start time</string>
+    <string name="error_date_passed">The date cannot be passed</string>
+    <string name="error_time_passed"> the time cannot be passed </string>
+    <string name="error_add_new_meeting">Invalid field or missing field</string>
+    <string name="add_new_meeting">The new meeting has been added</string>
+    <string name="error_meeting_already_create">The meeting room is already booked</string>
+    <string name="error_empty_field">Field can\'t be empty</string>
+    <string name="error_invalid_date_format">Invalid date format</string>
+    <string name="error_invalid_time_format">Invalid time format</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="meeting_topic">meeting topic</string>
+    <string name="list_of_participants">List of participants (emails)</string>
+    <string name="date">date</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="toast_text_delete_meeting">The meeting has been deleted!</string>
+
+</resources>
