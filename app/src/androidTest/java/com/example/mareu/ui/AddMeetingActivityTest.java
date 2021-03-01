@@ -294,6 +294,8 @@ public class AddMeetingActivityTest {
                             TODAY_INVALID_START_TIME.get(Calendar.HOUR_OF_DAY),
                             TODAY_INVALID_START_TIME.get(Calendar.MINUTE)));
             onView(withText(android.R.string.ok)).perform(click());
+
+
             onView(withId(R.id.button_add_meeting)).perform(click());
 
             onView(withId(R.id.from_layout))

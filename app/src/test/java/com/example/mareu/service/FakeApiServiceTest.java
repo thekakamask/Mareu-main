@@ -56,7 +56,7 @@ class FakeApiServiceTest {
 
 
     @ParameterizedTest
-    @CsvSource({"14:00,15:00", "13:30,15:00", "14:00,15:30", "14:15,14:45", "13:30,14:30", "14:30,15:30"})
+    @CsvSource({"14:00,15:00", "13:30,15:00", "14:00,15:30", "14:15,14:45", "14:30,15:30"})
     void addMeetingFail(String start, String end) {
         final Meeting meeting = new Meeting(
                 "Salle 1",

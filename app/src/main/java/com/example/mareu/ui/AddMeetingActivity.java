@@ -198,7 +198,7 @@ public class AddMeetingActivity extends AppCompatActivity {
             }
         }
 
-        if (date != null && end != null) {
+        if (date != null && start != null) {
             start.set(Calendar.YEAR, date.get(Calendar.YEAR));
             start.set(Calendar.MONTH, date.get(Calendar.MONTH));
             start.set(Calendar.DAY_OF_MONTH, date.get(Calendar.DAY_OF_MONTH));
