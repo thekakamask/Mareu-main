@@ -12,15 +12,7 @@ public class Meeting implements Comparable<Meeting> {
     private static Integer mFirID = 0;
     private static Random mRandom = new Random();
 
-    /**
-     * EVERY MEETING IS COMPOSED BY :
-     * The name of the meeting room
-     * The meeting start date and time
-     * The meeting end date and time
-     * The topic of the meeting
-     * The list of email addresses of meeting participants
-     * included the ID of the meeting and his color
-     */
+
     private Integer mId;
     private String mRoomName;
     private Calendar mStartTime;
@@ -47,6 +39,7 @@ public class Meeting implements Comparable<Meeting> {
                 mRandom.nextInt(255));
     }
 
+    //GET ET SET
 
     public Integer getId() {
         return mId;

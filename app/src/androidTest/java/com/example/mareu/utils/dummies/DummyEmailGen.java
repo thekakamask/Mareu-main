@@ -17,8 +17,13 @@ public abstract class DummyEmailGen {
             "leomarti@hotmail.com",
             "angelmognet@outlook.com");
 
+    //GENERER UNE LISTE DE MAIL DE 4 ET LA RETOURNER
+
     static List<String> generateEmails() {return DUMMY_EMAILS;}
 
+
+
+    // GENERER UNE LISTE D'EMAIL ET RETOURNER CETTE LISTE
     static List<String> generateEmails(int nbEmail) {
         nbEmail--;
 

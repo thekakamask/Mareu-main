@@ -8,14 +8,17 @@ import com.example.mareu.service.MeetingApiServiceException;
 import java.util.List;
 
 public class DI {
+
+    // RECUPERER L'INSTANCE
     private static MeetingApiService sService = new FakeMeetingApiService();
 
 
+    // RETOURNER L'INSTANCE
     public static MeetingApiService getMeetingApiService() {
         return sService;
     }
 
-    //EXPLIQUEZ CELA
+    //INITIALISATION DE L'API POUR LES TESTS
     public static void initMeetingApiService(List<String> rooms, List<Meeting> meetings) throws MeetingApiServiceException {
 
         sService = new FakeMeetingApiService();

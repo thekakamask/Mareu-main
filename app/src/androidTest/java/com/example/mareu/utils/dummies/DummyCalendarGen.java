@@ -19,6 +19,8 @@ public abstract class DummyCalendarGen {
     public static final Calendar TODAY_INVALID_START_TIME = generateTimeFromNow(-1);
 
 
+    // GENERER UN CALENDRIER POUR UNE DATE D'AUJOURDHUI AVEC UN TEMPS DECOUPE EN DEMI HEURE
+    //RETOURNER CETTE DATE
     private static Calendar initNow() {
         Calendar tmp = Calendar.getInstance();
 
@@ -32,6 +34,9 @@ public abstract class DummyCalendarGen {
 
     }
 
+    //GENERER UN CALENDRIER POUR UN DATE DU PASSE OU FUTUR
+    // DIFFDAYS ETANT LA DIFFERENCE DE JOUR ENTRE LA DATE ET AUJOURDHUI
+    // RETOURNER CETTE DATE
     private static Calendar generateDateFromNow(int diffDays) {
         Calendar tmp = (Calendar) NOW.clone();
         tmp.add(Calendar.DATE, diffDays);
@@ -40,6 +45,9 @@ public abstract class DummyCalendarGen {
 
     }
 
+    //GENERATE UN CALENDRIER POUR UN HEURE DU PASSE OU FUTUR
+    //DIFFHOURS ETANT LA DIFFENRECE DHEURE ENTRE LHEURE CIBLE ET LHEURE DE MAINTENANT
+    //RETOURNER CETTE HEURE
     private static Calendar generateTimeFromNow(int diffHours) {
         Calendar tmp = (Calendar) NOW.clone();
         tmp.add(Calendar.HOUR_OF_DAY, diffHours);
@@ -48,6 +56,9 @@ public abstract class DummyCalendarGen {
 
     }
 
+    //GENERER UN CALENDRIER POUR UNE DATE ET UNE HEURE DEPUIS LE PASSE OU FUTUR
+    //DIFFHOUYRS ETANT LE NOMBRE D'HEURE A ENLEVER OU AJOUTER
+    // RETOURNER CETTE DATE ET CETTE HEURE
     private static Calendar generateTimeFromTomo(int diffHours)  {
         Calendar tmp = (Calendar) TOMORROW.clone();
         tmp.add(Calendar.HOUR_OF_DAY, diffHours);

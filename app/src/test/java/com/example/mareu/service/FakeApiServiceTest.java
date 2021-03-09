@@ -14,6 +14,7 @@ import java.util.Calendar;
 
 import static com.example.mareu.utils.UtilTest.fromTime;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
@@ -44,11 +45,13 @@ class FakeApiServiceTest {
     @Test
     void addMeeting() {
 
-        Meeting meeting = new Meeting ("salle 2", Calendar.getInstance(),Calendar.getInstance(),"sujet",Arrays.asList("hubertdel@hotmail.fr", "alisherkoa@hotmail.com"));
+        Meeting meetingTest = new Meeting ("salle 2", Calendar.getInstance(),Calendar.getInstance(),"sujet",Arrays.asList("hubertdel@hotmail.fr", "alisherkoa@hotmail.com"));
 
         try {
-            mApi.addMeeting(meeting);
+            mApi.addMeeting(meetingTest);
         } catch (MeetingApiServiceException e) {
+
+            assertTrue(mApi.getMeetings(null,"").contains(meetingTest));
 
         }
 

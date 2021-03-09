@@ -75,6 +75,7 @@ public class AddMeetingActivityTest {
         public ActivityTestRule<AddMeetingActivity> mActivityRule=
                 new ActivityTestRule<>(AddMeetingActivity.class);
 
+        //INITIALISATION ET VERIFICATION QUE L'ACTIVITE NE SOIT PAS VIDE
         @Before
         public void setUp() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -82,6 +83,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        // VERIFICATION DES ENTREE DANS LE CHAMPS DU CHOIX DES SALLES
         @Test
         public void giveRoom_thenGetRoomWithoutErrorWhenAdd() {
             onView(withId(R.id.room_name)).perform(click());
@@ -95,7 +97,7 @@ public class AddMeetingActivityTest {
 
         }
 
-
+        // VERIFICATION DU CHAMPS DU TOPIC
         @Test
         public void giveTopic_thenGetTopicWithoutErrorWhenAdd() {
             onView(withId(R.id.topic)).perform(click());
@@ -109,7 +111,7 @@ public class AddMeetingActivityTest {
 
         }
 
-
+        // VERIFICATION DU CHAMPS DES EMAILS
         @Test
         public void giveValidEmail_thenRecupEmailWithoutErrorWhenEnter() {
             onView(withId(R.id.emails)).perform(closeSoftKeyboard());
@@ -124,6 +126,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        // VERIFICATION DU CHAMPS DES EMAILS AVEC PLUSIEURS EMAILS
         @Test
         public void giveThreeValidEmail_thenRecupEmailWithoutErrorWhenEnter() {
             onView(withId(R.id.emails)).perform(closeSoftKeyboard());
@@ -145,6 +148,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        //VERIFICATION DU CHAMPS DES EMAILS AVEC UN EMAIL INVALIDE
         @Test
         public void giveInvalidEmail_thenGetErrorWhenEnter(){
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -158,6 +162,7 @@ public class AddMeetingActivityTest {
 
         }
 
+        // VERIFICATION DU CHAMPS DES EMAILS AVEC UN EMAIL VALIDE ET UN QUI EST INVALIDE
         @Test
         public void giveOneValidOneInvalid_thenGetErrorWhenEnter() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -179,6 +184,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        //VERIFICATION DE LA SUPPRESSION D'EMAIL DANS LE GROUPE D'EMAILS
         @Test
         public void giveEmailChip_thenClicktoChip_thenDeleteChip() {
 
@@ -197,6 +203,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        // VERIFICATION DU CHAMP DE DATE AVEC UNE DATE VALIDE
         @Test
         public void giveValidDate_thenClickDatePicker_ThenGetValidStringDate() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -218,7 +225,7 @@ public class AddMeetingActivityTest {
 
         }
 
-
+        // VERIFICATION DU CHAMP DE DATE AVEC UNE DATE INVALIDE
         @Test
         public void giveInvalidDate_thenClickDatePicker_ThenGetError() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -239,6 +246,7 @@ public class AddMeetingActivityTest {
 
         }
 
+        // VERIFICATION DU CHAMP D'HEURE AVEC DES HEURES VALIDES
         @Test
         public void giveValidTime_thenClickTimePicker_ThenGetValidStringDate() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -274,7 +282,7 @@ public class AddMeetingActivityTest {
 
         }
 
-
+        // VERIFICATION DU CHAMP D'HEURE AVEC UNE HEURE DE DEPART INVALIDE
         @Test
         public void giveInvalidStartTime_thenClickTimePicker_ThenGetError() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -305,6 +313,7 @@ public class AddMeetingActivityTest {
 
         }
 
+        // VERIFICATION DU CHAMP D'HEURE AVEC UNE HEURE DE FIN INVALIDE
         @Test
         public void giveInvalidEndTime_thenClickTimePicker_ThenGetError() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -335,6 +344,7 @@ public class AddMeetingActivityTest {
         }
 
 
+        //VERIFICATION DE BOUTON RETOUR (ANNULATION DE LA CREATION D'UN NOUVEAU MEETING
         @Test
         public void CancelAddMeeting_byPerformReturn() {
             onView(withContentDescription(R.string.abc_action_bar_up_description))
@@ -342,10 +352,6 @@ public class AddMeetingActivityTest {
 
             assertTrue(mActivityRule.getActivity().isFinishing());
 
-            //TODO
-            /*onView(withText(R.string.abort_add_meeting))
-                     .inRoot(isToast())
-                    .check(matches(isDisplayed()));*/
 
         }
 
@@ -356,6 +362,8 @@ public class AddMeetingActivityTest {
     @RunWith(Parameterized.class)
     public static class ComponentTestsEmptyFields {
 
+        //VERIFICATION AVEC DES CHAMPS VIDES
+        // RECUPERATION DE LA LISTE DE TEXTLAYOUT
         @Parameters
         public static Collection<Object> data() {
             return Arrays.asList(new Object[] {
@@ -369,6 +377,7 @@ public class AddMeetingActivityTest {
 
         }
 
+        //DEFINITION DES REGLES POUR INITIALISER L'ACTIVITE
         @Parameterized.Parameter
         public int viewId;
 
@@ -381,12 +390,14 @@ public class AddMeetingActivityTest {
         public ActivityTestRule<AddMeetingActivity> mActivityRule =
                 new ActivityTestRule<>(AddMeetingActivity.class);
 
+        //INITIALISATION
         @Before
         public void setUp() {
             AddMeetingActivity activity = mActivityRule.getActivity();
             assertThat(activity, notNullValue());
         }
 
+        //VERIFICATION QUE LES CHAMPS VIDES ENVOIENT UN MESSAGE D'ERREUR VALIDE
         @Test
         public void Empty_GetErrorMessage_whenClickAdd() {
             AddMeetingActivity activity = mActivityRule.getActivity();
@@ -404,12 +415,14 @@ public class AddMeetingActivityTest {
         @RunWith(Parameterized.class)
         public static class ComponentEmailsField {
 
+            //RECUPERATION D'UNE LISTE D'ESPACE A VERIFIER
             @Parameters
             public static Collection<Object> data() {
                 return Arrays.asList(new Object [] { "", ","});
 
             }
 
+            //DEFINITION DES REGLE POUR INITIALISATION
             @Parameterized.Parameter
             public String delimiterField;
 
@@ -421,12 +434,14 @@ public class AddMeetingActivityTest {
             public ActivityTestRule<AddMeetingActivity> mActivityRule =
                     new ActivityTestRule<>(AddMeetingActivity.class);
 
+            //INITIALISATION
             @Before
             public void setUp() {
                 AddMeetingActivity activity = mActivityRule.getActivity();
                 assertThat(activity, notNullValue());
             }
 
+            //VERIFICATION AVEC UNE ENTREE D'EMAIL CORRECT
             @Test
             public void giveValidEmail_withTextDelimiter_thenGetEmail() {
                 onView(withId(R.id.emails))
@@ -443,6 +458,7 @@ public class AddMeetingActivityTest {
             }
 
 
+            //VERIFICATION AVEC UNE ENTREE DE PLUSIEURS EMAILS CORRECT
             @Test
             public void giveThreeValidEmail_withTextDelimiter_thenGetEmail() {
                 onView(withId(R.id.emails))
@@ -468,6 +484,7 @@ public class AddMeetingActivityTest {
             }
 
 
+            //VERIFICATION AVEC UNE ENTREE D'EMAIL INVALIDE
             @Test
             public void giveInvalidEmail_withTextDelimiter_thenGetError(){
                 AddMeetingActivity activity = mActivityRule.getActivity();
@@ -483,6 +500,7 @@ public class AddMeetingActivityTest {
             }
 
 
+            //VERIFICATION AVEC UN ENTREE VALIDE ET UNE INVALIDE
             @Test
             public void giveValidAndInvalidEmail_withTextDelimiter_thenGetError(){
 

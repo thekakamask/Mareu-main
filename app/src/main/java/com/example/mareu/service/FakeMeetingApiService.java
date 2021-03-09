@@ -21,32 +21,37 @@ public class FakeMeetingApiService implements MeetingApiService {
 
 
     public FakeMeetingApiService() {
-        mMeetings = new ArrayList<>();                     //DUMMY_MEETINGS
+        mMeetings = new ArrayList<>();
         mRooms = new ArrayList<>(Arrays.asList(
                 "Room 1", "Room 2", "Room 3", "Room 4", "Room 5",
                 "Room 6", "Room 7", "Room 8", "Room 9", "Room 10"));
     }
 
+    //RECUPERER LES SALLES
     @Override
     public List<String> getRooms() {
         return mRooms;
     }
 
+    //AJOUTER UNE SALLE
     @Override
     public void addRoom(String room) {
         mRooms.add(room);
     }
 
+    //SUPPRIMER UNE SALLE
     @Override
     public void delRoom(String room) {
         mRooms.remove(room);
     }
 
+    //SUPPRIMER TTES LES SALLES POUR L'INITIALISATION
     @Override
     public void delAllRooms() {
         mRooms.clear();
     }
 
+    // RECUPERE LES REUNIONS
     @Override
     public List<Meeting> getMeetings(Calendar date, String roomName) {
         if (date != null && roomName != null && ! roomName.isEmpty())
@@ -61,6 +66,7 @@ public class FakeMeetingApiService implements MeetingApiService {
 
     }
 
+    // AJOUTER UNE REUNION
     @Override
     public void addMeeting(Meeting meeting) throws MeetingApiServiceException {
         for (Meeting m : mMeetings) {
@@ -76,6 +82,7 @@ public class FakeMeetingApiService implements MeetingApiService {
         mMeetings.add(meeting);
     }
 
+    // SUPPRIMER UNE REUNION
     @Override
     public void delMeeting(Integer idMeeting) {
         for (Meeting m: mMeetings) {
